@@ -48,7 +48,7 @@ header {
 
 .display-2 {
     font-family:'Lato';
-    font-size:120px;
+    font-size:9vw;
     line-height:1;
     font-weight:300;
     color:#fff
@@ -103,7 +103,7 @@ header {
 .heading h2 {
     font-weight:600;
     font-family:'Raleway';
-    font-size: 70px;
+    font-size: 6vw;
     color:#333;
     margin:0;
     padding:5px;
@@ -157,6 +157,18 @@ button.contact.submit {
     border:none!important;
     border-radius:3px;
     padding:15px 45px;
+}
+
+.more {
+    background:#333;
+    font-family:'Lato',sans-serif;
+    color:#fff;
+    border-radius:3px;
+}
+
+.more:hover {
+    background:#563d7c;
+    color:#fff !important;
 }
 
 button.contact.submit:hover {
