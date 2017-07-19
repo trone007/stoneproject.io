@@ -47,12 +47,13 @@ header {
 }
 
 .display-2 {
-    font-family:'Lato';
-    font-size:120px;
-    line-height:1;
-    font-weight:300;
-    color:#fff
+    font-family: 'Lato';
+    font-size: 9vw;
+    line-height: 1;
+    font-weight: 300;
+    color: #fff;
 }
+
 
 .learn {
     font-family:'Lato';
@@ -60,6 +61,18 @@ header {
     line-height:1.4;
     font-weight:300;
     color:#fff;
+}
+
+.more {
+    background:#333;
+    font-family:'Lato',sans-serif;
+    color:#fff;
+    border-radius:3px;
+}
+
+.more:hover {
+    background:#563d7c;
+    color:#fff !important;
 }
 
 .jumbotron-fluid {
@@ -103,7 +116,7 @@ header {
 .heading h2 {
     font-weight:600;
     font-family:'Raleway';
-    font-size: 70px;
+    font-size: 6vw;
     color:#333;
     margin:0;
     padding:5px;
@@ -206,10 +219,14 @@ button.contact.submit:hover {
     height:45px!important;
     -webkit-border-radius:3px;
     border-radius:3px;
+    -webkit-transition: all 0.5s ease-out 0s;
+    -moz-transition: all 0.5s ease-out 0s;
+    -o-transition: all 0.5s ease-out 0s;
+    transition: all 0.5s ease-out 0s;
 }
 
 .footer ul li:hover {
-    background:#2a2a2a;
+    background-color: #563d7c;
 }
 
 .footer ul li:hover	a {
@@ -252,11 +269,11 @@ button.contact.submit:hover {
     }
 
     textarea.contact.col-md-12 {
-        margin: 15px 15px 0 58px;
+        margin: 10px 15px 0 58px;
     }
 
     button#submit.contact.submit{
-        margin: 15px 15px 0 42px;
+        margin: 10px 15px 0 42px;
     }
 
 }
