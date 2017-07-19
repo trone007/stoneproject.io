@@ -34,7 +34,7 @@
             <div class="parallax-pattern-overlay">
                 <div class="container text-center" id="size-banner">
                     <a href="#"><img id="site-title" src="img/logo.png" alt="logo"/></a>
-                    <h2 class="display-2">WE ARE STONEPROJECT</h2>
+                    <h2 class="display-2">WE ARE ONTEAM.IO</h2>
                     <h3 class="learn">We are build, we are dream</h3>
                     <a href = "#aboutus"><h3 class="fa fa-angle-double-down fa-5x" aria-hidden="true"></h3></a>
                 </div>
@@ -43,72 +43,72 @@
     </div>
 
     <div class="navbar" id = "navbar">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          STONEPROJECT
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                ONTEAM.IO
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#banner">HOME</a></li>
+                    <li><a href="#aboutus">ABOUT US</a></li>
+                    <li><a href="#proficiency">SKILLS</a></li>
+                    <li><a href="#contact" target="_blank">CONTACTS</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#banner">HOME</a></li>
-            <li><a href="#aboutus">ABOUT US</a></li>
-            <li><a href="#proficiency">SKILLS</a></li>
-            <li><a href="#contact" target="_blank">CONTACTS</a></li>
-          </ul>
-        </div>
-      </div>
     </div>
-        <script type="text/javascript">
+    <script type="text/javascript">
 
-      $(document).ready(function(){
-         $("#navbar").sticky({ topSpacing: 0 });
+        $(document).ready(function(){
+            $("#navbar").sticky({ topSpacing: 0 });
 
-$(document).ready(function () {
-    $(document).on("scroll", onScroll);
+            $(document).ready(function () {
+                $(document).on("scroll", onScroll);
 
-    //smoothscroll
-    $('a[href^="#"]').on('click', function (e) {
-        e.preventDefault();
-        $(document).off("scroll");
+                //smoothscroll
+                $('a[href^="#"]').on('click', function (e) {
+                    e.preventDefault();
+                    $(document).off("scroll");
 
-        $('a').each(function () {
-            $(this).removeClass('active');
-        })
-        $(this).addClass('active');
+                    $('a').each(function () {
+                        $(this).removeClass('active');
+                    });
+                    $(this).addClass('active');
 
-        var target = this.hash,
-            menu = target;
-        $target = $(target);
-        $('html, body').stop().animate({
-            'scrollTop': $target.offset().top+2
-        }, 500, 'swing', function () {
-            window.location.hash = target;
-            $(document).on("scroll", onScroll);
+                    var target = this.hash,
+                        menu = target;
+                    $target = $(target);
+                    $('html, body').stop().animate({
+                        'scrollTop': $target.offset().top+2
+                    }, 500, 'swing', function () {
+                        window.location.hash = target;
+                        $(document).on("scroll", onScroll);
+                    });
+                });
+            });
+
+            function onScroll(event){
+                var scrollPos = $(document).scrollTop();
+                $('#navbar a').each(function () {
+                    var currLink = $(this);
+                    var refElement = $(currLink.attr("href"));
+                    if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                        $('#navbar ul li a').removeClass("active");
+                        currLink.parent().addClass("active");
+                    }
+                    else{
+                        currLink.parent().removeClass("active");
+                    }
+                });
+            }
+
+
         });
-    });
-});
-
-function onScroll(event){
-    var scrollPos = $(document).scrollTop();
-    $('#navbar a').each(function () {
-        var currLink = $(this);
-        var refElement = $(currLink.attr("href"));
-        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-            $('#navbar ul li a').removeClass("active");
-            currLink.parent().addClass("active");
-        }
-        else{
-            currLink.parent().removeClass("active");
-        }
-    });
-}
-
-
-      });
 
 
 
@@ -121,7 +121,7 @@ function onScroll(event){
                 <div class="col-lg-12">
                     <div class="heading text-center">
                         <img class="dividerline" src="img/sep.png" alt="">
-                        <h2>About Boostrap 4 Alpha</h2>
+                        <h2>About Bootstrap 4 Alpha</h2>
 
                         <img class="dividerline" src="img/sep.png" alt="">
                         <h3><mark>Bootstrap</mark> is the world’s most popular framework for building responsive, mobile-first sites and applications. Inside you’ll find high quality HTML, CSS, and JavaScript to make starting any project easier than ever. On <mark>August 19</mark>, Bootstrap 4 alpha was released with the removal of support for IE8. Of course, there are still going to be a couple of alphas before they move to the beta phase, but this gives us a glimpse on what to expect on the next versions.</h3>
@@ -129,47 +129,47 @@ function onScroll(event){
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3">
-                    <div class="card">
+                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
+                    <div class="card card-inverse card-success text-center">
                         <img class="card-img-top" src="img/card1.jpg" alt="Card image cap">
                         <div class="card-block">
                             <h4 class="card-title">This is Card #1</h4>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="http://v4-alpha.getbootstrap.com/components/card/" class="btn btn-primary">Learn More</a>
+                            <a href="http://v4-alpha.getbootstrap.com/components/card/" class="btn more">Learn More</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
                     <div class="card card-inverse card-primary text-center">
                         <img class="card-img-top" src="img/card2.jpg" alt="Card image cap">
                         <div class="card-block">
                             <h4 class="card-title">This is Card #2</h4>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="http://v4-alpha.getbootstrap.com/components/card/" class="btn btn-primary">Learn More</a>
+                            <a href="http://v4-alpha.getbootstrap.com/components/card/" class="btn more">Learn More</a>
                         </div>
                     </div>
                 </div>
 
 
-                <div class="col-md-3">
+                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
                     <div class="card card-inverse card-success text-center">
                         <img class="card-img-top" src="img/card3.jpg" alt="Card image cap">
                         <div class="card-block">
                             <h4 class="card-title">This is Card #3</h4>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="http://v4-alpha.getbootstrap.com/components/card/" class="btn btn-primary">Learn More</a>
+                            <a href="http://v4-alpha.getbootstrap.com/components/card/" class="btn more">Learn More</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
                     <div class="card card-inverse card-info text-center">
                         <img class="card-img-top" src="img/card4.jpg" alt="Card image cap">
                         <div class="card-block">
                             <h4 class="card-title">This is Card #4</h4>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="http://v4-alpha.getbootstrap.com/components/card/" class="btn btn-primary">Learn More</a>
+                            <a href="http://v4-alpha.getbootstrap.com/components/card/" class="btn more">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -199,7 +199,7 @@ function onScroll(event){
                         <a href="index.html#"><img src="img/mongo.png" alt=""></a>
                     </li>
                     <!--<li>-->
-                        <!--<a href="index.html#"><img src="img/golang.png" alt=""></a>-->
+                    <!--<a href="index.html#"><img src="img/golang.png" alt=""></a>-->
                     <!--</li>-->
                     <li>
                         <a href="index.html#"><img src="img/node.png" alt=""></a>
@@ -217,10 +217,10 @@ function onScroll(event){
                         <a href="index.html#"><img src="img/postgre.png" alt=""></a>
                     </li>
                     <!--<li>-->
-                        <!--<a href="index.html#"><img src="img/ios.png" alt=""></a>-->
+                    <!--<a href="index.html#"><img src="img/ios.png" alt=""></a>-->
                     <!--</li>-->
                     <!--<li>-->
-                        <!--<a href="index.html#"><img src="img/android.png" alt=""></a>-->
+                    <!--<a href="index.html#"><img src="img/android.png" alt=""></a>-->
                     <!--</li>-->
                 </ul>
             </div>
@@ -281,14 +281,15 @@ function onScroll(event){
             <div class="row">
                 <div class="col-lg-12">
                     <ul>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 
                     </ul>
                     <p>
-                        &copy; 2017 - stoneproject.io<br>
+                        &copy; 2017 - onteam.io<br>
                     </p>
                 </div>
             </div>
