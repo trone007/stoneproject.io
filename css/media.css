@@ -1,5 +1,55 @@
 .jumbotron {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+@media (min-width: 320px){
+    .display-2 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 760px) {
+    .navbar-toggle {
+        background-color: #2c363f;
+    }
+
+    .icon-bar {
+        background-color: #FFF;
+    }
+
+    .display-2 {
+        font-size: 20px;
+    }
+
+    .heading h2 {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 760px) {
+    .heading h2 {
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 960px) {
+    .heading h2 {
+        font-size: 70px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .btn {
+        margin-bottom: 15px;
+    }
+}
+
+.btn {
+    border: none;
+    background-color: #2c363f;
+}
+
+.btn:hover {
+    background-color: #2c363d;
 }
