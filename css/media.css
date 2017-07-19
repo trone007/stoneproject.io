@@ -1,5 +1,14 @@
 .jumbotron {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+@media (max-width: 760px) {
+    .navbar-toggle {
+        background-color: #2c363f;
+    }
+    .icon-bar {
+        background-color: #FFF;
+    }
 }
