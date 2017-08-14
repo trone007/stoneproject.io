@@ -1,3 +1,0 @@
-# stoneproject.io
-
-ONTEAM IO

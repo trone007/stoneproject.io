@@ -46,7 +46,7 @@
     <div class="navbar" id = "navbar">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <button id="burg" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -71,56 +71,45 @@
                 <div class="col-lg-12">
                     <div class="heading text-center">
                         <h2>Quick and smart</h2>
-                        <h3>We are building young and intelligent team of Web Developers in Bishkek!</h3>
+                        <h3>We are building young and intelligent team of Web Developers!</h3>
+                        <h4>Our works:</h4>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
                     <div class="card card-inverse card-info text-center">
-                        <img class="card-img-top" src="img/card1.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="img/dsfera.png" alt="domosfera.kg">
                         <div class="card-block">
-                            <h4 class="card-title">This is Card #1</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="http://v4-alpha.getbootstrap.com/components/card/" class="btn btn-primary">Learn More</a>
+                            <h4 class="card-title">domosfera.kg</h4>
+                            <p class="card-text">Wallpapers Store inventory system, based on AngularJS and Symfony 2</p>
+                            <a href="http://domosfera.kg/new" target="_blank" class="btn btn-primary">Show</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
                     <div class="card card-inverse card-primary text-center">
-                        <img class="card-img-top" src="img/card2.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="img/roof.png" alt="Card image cap">
                         <div class="card-block">
-                            <h4 class="card-title">This is Card #2</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="http://v4-alpha.getbootstrap.com/components/card/" class="btn btn-primary">Learn More</a>
+                            <h4 class="card-title">roof.kg</h4>
+                            <p class="card-text">Website card. Light Boostrap and AngularJS based. Adaptive end responsive design.</p>
+                            <a href="http://roof.kg" target="_blank" class="btn btn-primary">Show</a>
                         </div>
                     </div>
                 </div>
 
 
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
                     <div class="card card-inverse card-success text-center">
                         <img class="card-img-top" src="img/card3.jpg" alt="Card image cap">
                         <div class="card-block">
-                            <h4 class="card-title">This is Card #3</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="http://v4-alpha.getbootstrap.com/components/card/" class="btn btn-primary">Learn More</a>
+                            <h4 class="card-title">Solution for you</h4>
+                            <p class="card-text">Your company can get the best quick and high-quality solution to any problems.</p>
+                            <a href="#" id="for_you" class="btn btn-primary">Contact us</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-                    <div class="card card-inverse card-info text-center">
-                        <img class="card-img-top" src="img/card4.jpg" alt="Card image cap">
-                        <div class="card-block">
-                            <h4 class="card-title">This is Card #4</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="http://v4-alpha.getbootstrap.com/components/card/" class="btn btn-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
@@ -249,6 +238,7 @@
         $("#navbar").sticky({ topSpacing: 0 });
         $(document).on("scroll", onScroll);
 
+
         //smoothscroll
         $('a[href^="#"]').on('click', function (e) {
             e.preventDefault();
@@ -285,6 +275,13 @@
                 }
             });
         }
+        
+        $('#for_you').unbind();
+        $('#for_you').click(function() {
+            $('html, body').animate({
+                scrollTop: $("#contact").offset().top
+            }, 2000);
+        });
 
 
     });
@@ -310,6 +307,49 @@
 <script type="text/javascript">
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
+
+        var body = $('body'),
+            burg = $('#burg'),
+            burgLinks = $('.collapse'),
+            nr = $('.navbar-right'),
+            navbar = $('.navbar'),
+            navbarHeight = navbar.css('height');
+
+        burgLinks.on('click', function () {
+            burgLinks.hide();
+            burgLinks.addClass('hidden');
+            navbar.css('height', navbarHeight);
+            enableScroll();
+        });
+
+        burg.on('click', function () {
+            if (burgLinks.hasClass('hidden')){
+                burgLinks.removeClass('hidden');
+                burg.removeClass('clicked');
+            }
+
+            if (burg.hasClass('clicked')){
+                nr.hide();
+                burg.removeClass('clicked');
+                navbar.css('height', navbarHeight);
+                enableScroll();
+
+            } else {
+                nr.show();
+                burg.addClass('clicked');
+                burgLinks.show();
+                navbar.css('height', '100%');
+                disableScroll();
+            }
+        });
+
+        function disableScroll() {
+            body.css('overflow', 'hidden');
+        }
+
+        function enableScroll() {
+            body.css('overflow', 'scroll');
+        }
     })
 
 </script>
