@@ -79,7 +79,7 @@
             <div class="row">
                 <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
                     <div class="card card-inverse card-info text-center">
-                        <img class="card-img-top" src="img/dsfera.png" alt="domosfera.kg">
+                        <a href="http://domosfera.kg/new" target="_blank"><img class="card-img-top" src="img/dsfera.png" alt="domosfera.kg"></a>
                         <div class="card-block">
                             <h4 class="card-title">domosfera.kg</h4>
                             <p class="card-text">Wallpapers Store inventory system, based on AngularJS and Symfony 2</p>
@@ -90,7 +90,7 @@
 
                 <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
                     <div class="card card-inverse card-primary text-center">
-                        <img class="card-img-top" src="img/roof.png" alt="Card image cap">
+                        <a href="http://roof.kg" target="_blank"><img class="card-img-top" src="img/roof.png" alt="Card image cap"></a>
                         <div class="card-block">
                             <h4 class="card-title">roof.kg</h4>
                             <p class="card-text">Website card. Light Boostrap and AngularJS based. Adaptive end responsive design.</p>
@@ -102,7 +102,7 @@
 
                 <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
                     <div class="card card-inverse card-success text-center">
-                        <img class="card-img-top" src="img/card3.jpg" alt="Card image cap">
+                        <a href="#" id="for_you_img"><img class="card-img-top" src="img/card3.jpg" alt="Card image cap"></a>
                         <div class="card-block">
                             <h4 class="card-title">Solution for you</h4>
                             <p class="card-text">Your company can get the best quick and high-quality solution to any problems.</p>
@@ -278,6 +278,13 @@
         
         $('#for_you').unbind();
         $('#for_you').click(function() {
+            $('html, body').animate({
+                scrollTop: $("#contact").offset().top
+            }, 2000);
+        });
+
+        $('#for_you_img').unbind();
+        $('#for_you_img').click(function() {
             $('html, body').animate({
                 scrollTop: $("#contact").offset().top
             }, 2000);

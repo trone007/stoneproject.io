@@ -12,11 +12,10 @@ body {
     color:#777;
     font-weight:300;
     line-height:1.7;
-    overflow-x:hidden;
 }
 
-body.style {
-    overflow-x: hidden;
+.wrapper {
+    overflow-x:hidden;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -56,6 +55,7 @@ img{
 }
 
 .card-img-top:hover{
+    /*cursor: pointer;*/
     -webkit-transform: scale(1.1,1.1);
     -webkit-transition-timing-function: ease-out;
     -webkit-transition-duration: 550ms;
