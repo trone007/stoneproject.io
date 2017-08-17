@@ -24,7 +24,6 @@
 
     <title>ONTEAM.IO</title>
 </head>
-<body>
 <!--wrapper start-->
 <div class="wrapper" id="wrapper">
 
@@ -306,8 +305,7 @@
 
 <script type="text/javascript">
     $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-
+        $('[data-toggle="tooltip"]').tooltip();
         var body = $('body'),
             burg = $('#burg'),
             burgLinks = $('.collapse'),
@@ -335,10 +333,14 @@
                 enableScroll();
 
             } else {
-                nr.show();
-                burg.addClass('clicked');
-                burgLinks.show();
-                navbar.css('height', '100%');
+                $('html, body').stop().animate({
+                    'scrollTop': navbar.offset().top+2
+                }, 1, 'swing', function () {
+                    nr.show();
+                    burg.addClass('clicked');
+                    burgLinks.show();
+                    navbar.css('height', '100%');
+                });
                 disableScroll();
             }
         });

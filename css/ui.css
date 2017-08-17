@@ -12,11 +12,6 @@ body {
     color:#777;
     font-weight:300;
     line-height:1.7;
-    overflow-x:hidden;
-}
-
-body.style {
-    overflow-x: hidden;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -49,7 +44,9 @@ img{
 header {
     padding-bottom:50px;
 }
-
+.wrapper {
+    overflow-x: hidden;
+}
 .display-2 {
     font-family:'Lato';
     font-size:120px;
