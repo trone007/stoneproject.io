@@ -51,6 +51,6 @@
     background-color: #2c363f;
 }
 
-.btn:hover {
-    background-color: #2c363d;
+.btn.btn-primary:hover {
+    background-color: #563d7c;
 }
