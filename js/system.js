@@ -6,73 +6,33 @@ function initCanvas() {
     LogosCanvas.width = width;
     Logosctx = LogosCanvas.getContext("2d")
 }
+
 initCanvas();
-$(document).ready(function() {
-    if (window.innerWidth >= 1200) {
-        if (!$("#tssLogos").tagcanvas({
-                textColour: "#ffffff",
-                noMouse: true,
-                outlineThickness: 1,
-                maxSpeed: .03,
-                depth: .2,
-                imageMode: "image",
-                imageScale: null,
-                initial: [.2, 0],
-                noSelect: true,
-                outlineMethod: "none",
-                shape: "vring(0)",
-                lock: "y",
-                radiusX: 5,
-                radiusY: 5,
-                radiusZ: 5,
-                wheelZoom: false
-            }, "logos")) {
-            $("#tssLogosContainer").hide()
-        }
-    } else if (window.innerWidth >= 768 || window.innerWidth < 1200) {
-        if (!$("#tssLogos").tagcanvas({
-                textColour: "#ffffff",
-                noMouse: true,
-                outlineThickness: 1,
-                maxSpeed: .03,
-                depth: .2,
-                imageMode: "image",
-                imageScale: .5,
-                initial: [.2, 0],
-                noSelect: true,
-                outlineMethod: "none",
-                shape: "vring(0)",
-                lock: "y",
-                radiusX: 3,
-                radiusY: 3,
-                radiusZ: 3,
-                wheelZoom: false
-            }, "logos")) {
-            $("#tssLogosContainer").hide()
-        }
-    } else if (window.innerWidth < 768) {
-        if (!$("#tssLogos").tagcanvas({
-                textColour: "#ffffff",
-                noMouse: true,
-                outlineThickness: 1,
-                maxSpeed: .03,
-                depth: .2,
-                imageMode: "image",
-                imageScale: .2,
-                initial: [.2, 0],
-                noSelect: true,
-                outlineMethod: "none",
-                shape: "vring(0)",
-                lock: "y",
-                radiusX: 1,
-                radiusY: 1,
-                radiusZ: 1,
-                wheelZoom: false
-            }, "logos")) {
-            $("#tssLogosContainer").hide()
-        }
-    }
+$(document).ready(function () {
+        setTagCanvasOptions();
 });
+
+function setTagCanvasOptions() {
+    if (!$("#tssLogos").tagcanvas({
+            textColour: "#ffffff",
+            outlineThickness: 1,
+            maxSpeed: .03,
+            depth: .2,
+            imageMode: "image",
+            imageScale: .2,
+            initial: [.2, 0],
+            noSelect: true,
+            outlineMethod: "none",
+            shape: "vring(0)",
+            lock: "y",
+            radiusX: 1,
+            radiusY: 1,
+            radiusZ: 1,
+            wheelZoom: false
+        }, "logos")) {
+        $("#tssLogosContainer").hide()
+    }
+}
 
 function ResponsiveTCforIE(c) {
     var e = document.getElementById(c),
@@ -82,25 +42,26 @@ function ResponsiveTCforIE(c) {
         e.style.height = rw * e.height / e.width + "px"
     }
 }
+
 if (document.all && document.addEventListener) {
-    window.addEventListener("resize", function() {
+    window.addEventListener("resize", function () {
         ResponsiveTCforIE("tssLogos")
     }, false);
-    window.addEventListener("load", function() {
+    window.addEventListener("load", function () {
         ResponsiveTCforIE("tssLogos")
     }, false)
 }
 var $;
 $ = jQuery;
 $.fn.extend({
-    eqHeight: function(column_selector, option) {
+    eqHeight: function (column_selector, option) {
         if (option == null) {
             option = {
                 equalize_interval: null,
                 break_point: null
             }
         }
-        return this.each(function() {
+        return this.each(function () {
             var columns, equalizer, infinite_equalizing, start_equalizing, timer, _equalize_marked_columns;
             timer = null;
             columns = $(this).find(column_selector);
@@ -110,24 +71,24 @@ $.fn.extend({
             if (columns.length === 0) {
                 return
             }
-            _equalize_marked_columns = function() {
+            _equalize_marked_columns = function () {
                 var marked_columns, max_col_height;
                 marked_columns = $(".eqHeight_row");
                 max_col_height = 0;
-                marked_columns.each(function() {
+                marked_columns.each(function () {
                     return max_col_height = Math.max($(this).outerHeight(), max_col_height)
                 });
                 marked_columns.height(max_col_height);
                 return $(".eqHeight_row").removeClass("eqHeight_row")
             };
-            equalizer = function() {
+            equalizer = function () {
                 var row_top_value;
                 columns.height("auto");
                 if (typeof option.break_point === "number" && $(window).width() <= option.break_point) {
                     return
                 }
                 row_top_value = columns.first().position().top;
-                columns.each(function() {
+                columns.each(function () {
                     var current_top;
                     current_top = $(this).position().top;
                     if (current_top !== row_top_value) {
@@ -138,11 +99,11 @@ $.fn.extend({
                 });
                 return _equalize_marked_columns()
             };
-            start_equalizing = function() {
+            start_equalizing = function () {
                 clearTimeout(timer);
                 return timer = setTimeout(equalizer, 100)
             };
-            infinite_equalizing = function() {
+            infinite_equalizing = function () {
                 equalizer();
                 return timer = setTimeout(infinite_equalizing, option.equalize_interval)
             };
@@ -155,16 +116,16 @@ $.fn.extend({
         })
     }
 });
-$(document).ready(function() {
+$(document).ready(function () {
     $("#equalHeight").eqHeight(".col-lg-3", {
         break_point: 767
     });
-    $("a#team").on("click", function() {
+    $("a#team").on("click", function () {
         $("html, body").animate({
             scrollTop: $("section#team").offset().top
         }, 2e3)
     });
-    $("a#portfolio").on("click", function() {
+    $("a#portfolio").on("click", function () {
         $("html, body").animate({
             scrollTop: $("section#portfolio").offset().top
         }, 2e3)
@@ -350,10 +311,8 @@ function initialize() {
         styles: stylesArray
     };
     map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
-    var markers = [
-    ];
-    var infoWindowContent = [
-      ];
+    var markers = [];
+    var infoWindowContent = [];
     var infoWindow = new google.maps.InfoWindow,
         marker, i;
     for (i = 0; i < markers.length; i++) {
@@ -372,15 +331,15 @@ function initialize() {
                 scaledSize: new google.maps.Size(image[0], image[1])
             }
         });
-        google.maps.event.addListener(marker, "click", function(marker, i) {
-            return function() {
+        google.maps.event.addListener(marker, "click", function (marker, i) {
+            return function () {
                 infoWindow.setContent(infoWindowContent[i][0]);
                 infoWindow.open(map, marker)
             }
         }(marker, i));
         map.fitBounds(bounds)
     }
-    var boundsListener = google.maps.event.addListener(map, "bounds_changed", function(event) {
+    var boundsListener = google.maps.event.addListener(map, "bounds_changed", function (event) {
         this.setZoom(3);
         google.maps.event.removeListener(boundsListener)
     })
